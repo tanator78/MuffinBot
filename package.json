@@ -1,0 +1,20 @@
+{
+  "name": "muffinbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zeeak",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.15",
+    "discord.js": "^11.3.2",
+    "erlpack": "github:discordapp/erlpack",
+    "ffmpeg": "0.0.4",
+    "node-opus": "^0.3.0",
+    "youtube-audio-stream": "^0.2.0",
+    "ytdl-core": "^0.20.4"
+  }
+}
