@@ -4,6 +4,7 @@ const Google = require('./commands/google')
 const Youtube = require('./commands/youtube')
 const Play = require('./commands/play')
 const GG = require('./commands/goodgame')
+const Overwatch = require('./commands/overwatch.js')
 const fs = require('fs')
 let data = fs.readFileSync('./token.txt')
 
@@ -15,10 +16,16 @@ dans le dossier puis itérer dessus et leur donner le chemin du fichier correspo
 //commandes
 bot.on('message', function(message){
     if(message.content === '!help'){
-        message.reply(` **[!goo][*recherche*]**  || Réalise un recherche google
-                        **[!yt][*recherche*]**   || Réalise un recherche youtube `)
+        message.reply(trim(` **[!goo][*recherche*]**  || Réalise un recherche google
+                        **[!yt][*recherche*]**   || Réalise un recherche youtube `))
     }
-    Google.parse(message) || Youtube.parse(message) || Play.parse(message) ||GG.parse(message)
+
+    Google.parse(message) ||
+    Youtube.parse(message) ||
+    Play.parse(message) ||
+    GG.parse(message) ||
+    Overwatch.parse(message)
+
 });
 
 bot.login(data.toString())

@@ -3,7 +3,7 @@ module.exports =  class Commands{
     static parse(message){
         if(this.match(message)){
             this.action(message)
-            return true;
+            return true
         }
         else{
             return false

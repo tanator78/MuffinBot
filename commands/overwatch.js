@@ -1,5 +1,5 @@
 const Commands = require('./commands')
-const Overwatch = require('overwatch-api')
+const overwatch = require('overwatch-api')
 const platform = 'pc'
 const region = 'eu'
 
@@ -14,10 +14,15 @@ module.exports = class Overwatch extends Commands{
     }
 
     static action(message){
+
         let tag = message.content.split(' ')
-        console.log(Overwatch)
-        Overwatch.getProfile(platform, region, tag, (json) => {
-            console.log(json)
-          })
-    }
+        let btag = message.content.split('-')
+
+        let output = overwatch.getProfile(platform, region, tag[1], (obj) => {
+            console.log(obj)
+            message.channel.send("**Statistiques pour : **"+obj.username+"#"+btag[1]+"\n**Niveau : **"+obj.level+"\n**Classement : **"+obj.competitive.rank+"\n**Victoires en partie rapide : **"+obj.games.quickplay.won+"\n**Vicoitres en partie classée : **"+obj.games.competitive.won, {
+                file: obj.portrait
+            }, 
+        );
+    })}
 }

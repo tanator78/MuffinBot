@@ -16,7 +16,6 @@ module.exports =  class Play extends Commands{
         VC
             .join()
             .then(function (connection) {
-                try{
                     let stream = YoutubeStream(args[1])
                     stream.on('error', function(){
                         message.reply('Cette vidéo n\'existe pas')
@@ -28,10 +27,6 @@ module.exports =  class Play extends Commands{
                         connection.disconnect()
                     })
                 }
-                catch(e){
-
-                }
-
-            })
-    }
+            )
+        }
 }
