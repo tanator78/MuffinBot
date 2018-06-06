@@ -25,6 +25,7 @@ module.exports = class Overwatch extends Commands{
         message.channel.send({ 
             embed: {
                 color: 3447003,
+                description: "https://overwatchtracker.com/profile/pc/global/" + obj.username+"-"+btag[1],
                 author: {
                     name: obj.username+"#"+btag[1],
                     icon_url: obj.portrait
