@@ -5,6 +5,7 @@ const Youtube = require('./commands/youtube')
 const Play = require('./commands/play')
 const GG = require('./commands/goodgame')
 const Overwatch = require('./commands/overwatch/overwatch.js')
+const Strawpoll = require('./commands/strawpoll')
 const fs = require('fs')
 let data = fs.readFileSync('./token.txt')
 
@@ -26,7 +27,8 @@ bot.on('message', function(message){
     Youtube.parse(message) ||
     Play.parse(message) ||
     GG.parse(message) ||
-    Overwatch.parse(message)
+    Overwatch.parse(message) ||
+    Strawpoll.parse(message)
 
 });
 
